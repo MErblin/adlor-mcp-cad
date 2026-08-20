@@ -1,0 +1,20 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "adlor-mcp-cad"
+version = "0.1.0"
+description = "Open-source Model Context Protocol (MCP) server for Autodesk Revit, IFC, and ASME B31.3 standards QA"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "mcp>=1.2.0",
+    "pydantic>=2.10.0",
+]
+
+[project.scripts]
+adlor-mcp-cad = "adlor_mcp_cad.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/adlor_mcp_cad"]
